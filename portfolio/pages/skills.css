@@ -1,0 +1,249 @@
+/* === Base Styling === */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #121212;
+  color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+/* === Skills Section Title === */
+.skills-section h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-top: 40px;
+  color: #00ffe7;
+  text-shadow: 0 0 5px #00ffe7;
+}
+
+/* === Scrollable Wrapper for Mobile === */
+.skills-scrollable {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 20px;
+}
+
+/* === Skill Category === */
+.skill-category {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  min-width: 300px;
+  margin: 0 10px 30px 10px;
+  padding: 20px;
+  background: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 255, 231, 0.2);
+  position: relative;
+}
+
+/* === Category Icon === */
+.skill-category::before {
+  content: attr(data-icon);
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 2em;
+  color: #00ffe7;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+/* === Category Title === */
+.skill-category h3 {
+  margin-top: 40px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  color: #ff6ec7;
+}
+
+/* === Skill Block === */
+.skill-block {
+  margin-bottom: 15px;
+}
+
+.skill-name {
+  margin-bottom: 5px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+/* === Progress Bar === */
+.skill-bar {
+  background-color: #333;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  height: 20px;
+}
+
+.skill-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00ffe7, #00bfff);
+  width: 0;
+  animation: fillBar 2s forwards;
+}
+
+@keyframes fillBar {
+  from { width: 0; }
+  to { width: var(--skill-level); }
+}
+
+/* === Sub-skills === */
+.sub-skill-block {
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+.sub-skill-name {
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+.sub-skill-bar {
+  background-color: #222;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 10px;
+  margin-top: 4px;
+}
+
+.sub-skill-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff6ec7, #ffc107);
+  width: 0;
+  animation: fillSubBar 2s forwards;
+}
+
+@keyframes fillSubBar {
+  from { width: 0; }
+  to { width: var(--sub-skill-level); }
+}
+
+/* === Example Skill Levels === */
+.skill-block[data-skill="fastapi"] .skill-fill {
+  --skill-level: 95%;
+}
+
+.skill-block[data-skill="frontend"] .skill-fill {
+  --skill-level: 90%;
+}
+
+.skill-block[data-skill="deployment"] .skill-fill {
+  --skill-level: 85%;
+}
+
+.skill-block[data-skill="debugging"] .skill-fill {
+  --skill-level: 88%;
+}
+
+/* === Example Sub-Skills === */
+.sub-skill-block[data-subskill="auth"] .sub-skill-fill {
+  --sub-skill-level: 92%;
+}
+
+.sub-skill-block[data-subskill="routing"] .sub-skill-fill {
+  --sub-skill-level: 87%;
+}
+
+.sub-skill-block[data-subskill="environment"] .sub-skill-fill {
+  --sub-skill-level: 90%;
+}
+
+.sub-skill-block[data-subskill="adware"] .sub-skill-fill {
+  --sub-skill-level: 80%;
+}
+/* === Navigation Bar === */
+.navbar {
+  background-color: #1a1a1a;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* === Navigation Bar === */
+.navbar {
+  background-color: #1a1a1a;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h1 {
+  font-size: 1.5rem;
+  color: #00ffe0;
+  margin: 0;
+}
+
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar nav a {
+  color: #00ffe0;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+  color: #000;
+  background-color: #00ffe0;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+}
+
+
+.skills-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 2rem;
+}
+
+@media (min-width: 768px) {
+  .skills-wrapper {
+    grid-template-columns: 1fr 1fr; /* vertical pairing on wider screens */
+  }
+}
+
+.card {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.quick-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.card {
+  background-color: #1f1f1f;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  color: #00ffe0;
+  text-decoration: none;
+  box-shadow: 0 0 12px rgba(0, 255, 224, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+.quick-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
